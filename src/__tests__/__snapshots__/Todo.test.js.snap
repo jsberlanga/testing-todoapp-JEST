@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Todo /> changes class when complete 1`] = `
+<div
+  className="todo"
+>
+  <div
+    className="todo--option"
+  >
+    <button
+      onClick={[Function]}
+    >
+      edit
+    </button>
+    <p
+      className="todo__complete"
+      onClick={[Function]}
+    >
+      fake todo
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      x
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<Todo /> renders todo 1`] = `
+<div>
+  <div
+    class="todo"
+  >
+    <div
+      class="todo--option"
+    >
+      <button>
+        edit
+      </button>
+      <p
+        class="todo__complete"
+      >
+        fake todo
+      </p>
+      <button>
+        x
+      </button>
+    </div>
+  </div>
+</div>
+`;

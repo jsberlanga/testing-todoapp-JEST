@@ -1,0 +1,59 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+}
+
+body h1 {
+  font-family: "Victor Mono";
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 60rem;
+  min-height: 90vh;
+  background: #f1f0f1;
+  box-shadow: 1px 1px 3px silver;
+  padding: 1rem 5rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav a {
+  margin: 1rem;
+}
+
+nav .navbar__links {
+  padding: 1rem;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+}
+
+.todo__complete {
+  text-decoration: line-through;
+}
+
+.todo button {
+  margin: 0 1rem;
+}
+
+.todo--create input {
+  margin: 1rem;
+}
+
+.todo--option {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
