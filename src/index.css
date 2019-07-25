@@ -8,8 +8,17 @@ body {
   font-family: "Poppins";
 }
 
+body li {
+  list-style: none;
+}
+
 body h1 {
   font-family: "Victor Mono";
+}
+
+.app {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .container {
