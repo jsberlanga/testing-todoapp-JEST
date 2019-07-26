@@ -21,5 +21,11 @@ describe("useCounter hook", () => {
       result.current.decrement();
     });
     expect(result.current.count).toBe(0);
+
+    // test cannot go below zero
+    act(() => {
+      result.current.decrement();
+    });
+    expect(result.current.count).toBe(0);
   });
 });
