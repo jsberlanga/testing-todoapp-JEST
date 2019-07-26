@@ -35,6 +35,7 @@ class CreateTodo extends React.Component {
             title
           </label>
           <input
+            data-testid="title-input"
             aria-label="title-input"
             type="text"
             value={title}
