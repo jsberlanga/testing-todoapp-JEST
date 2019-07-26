@@ -1,17 +1,20 @@
-describe("input form", () => {
+const typedText = "new todo";
+describe("input form refactor?", () => {
   beforeEach(() => {
     cy.visit("/");
-  });
-  it("input changes", () => {
     cy.get("[data-testid=title-input]")
-      .type("new todo")
-      .should("have.value", "new todo");
-
+      .type(typedText)
+      .should("have.value", typedText);
     cy.get("[data-testid=submit-button]").click();
     cy.get(".todo--option");
+  });
 
+  it("completes todo", () => {
     cy.get("[data-test=complete-todo]").click();
     cy.get(".todo__complete").click();
+  });
+
+  it("edits todo", () => {
     cy.get("[data-test=edit-todo]").click();
 
     cy.get(".todo--option > input")
@@ -19,7 +22,8 @@ describe("input form", () => {
       .type("update todo")
       .should("have.value", "update todo");
     cy.get(".todo--option > button").click();
-
+  });
+  it("deletes todo", () => {
     cy.get("[data-test=delete-todo]").click();
     cy.contains("no items");
   });
