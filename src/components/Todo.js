@@ -31,14 +31,19 @@ const Todo = ({ todo, handleComplete, handleDelete, handleUpdate }) => {
       )}
       {!isEdit && (
         <div className="todo--option">
-          <button onClick={() => onUpdate(todo)}>edit</button>
+          <button data-test="edit-todo" onClick={() => onUpdate(todo)}>
+            edit
+          </button>
           <p
+            data-test="complete-todo"
             onClick={() => handleComplete(todo)}
             className={todo.complete ? "todo__complete" : ""}
           >
             {todo.title}
           </p>
-          <button onClick={() => handleDelete(todo)}>x</button>
+          <button data-test="delete-todo" onClick={() => handleDelete(todo)}>
+            x
+          </button>
         </div>
       )}
     </div>
