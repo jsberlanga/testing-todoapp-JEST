@@ -28,7 +28,7 @@ const Hooks = () => {
         const res = await axios.get(
           "http://hn.algolia.com/api/v1/search?query=react"
         );
-        console.log(res);
+        // console.log(res);
         dispatch({ type: "SET_LIST", list: res.data.hits });
       } catch (error) {
         console.log(error);
@@ -67,7 +67,9 @@ const Hooks = () => {
 
       <ul data-testid="list">
         {data.list.map(item => (
-          <li key={item.objectID}>{item.title}</li>
+          <li data-testid="list-item" key={item.objectID}>
+            {item.title}
+          </li>
         ))}
       </ul>
     </div>
