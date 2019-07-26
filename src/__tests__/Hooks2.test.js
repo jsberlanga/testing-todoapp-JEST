@@ -10,7 +10,6 @@ import {
 import "@testing-library/jest-dom/extend-expect";
 import axios from "axios";
 import Hooks from "../components/Hooks";
-import { act } from "react-dom/test-utils";
 
 afterEach(cleanup);
 

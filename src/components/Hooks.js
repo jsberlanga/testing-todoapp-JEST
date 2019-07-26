@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+import useCounter from "./useCounter";
+
 export const dataReducer = (state, action) => {
   if (action.type === "SET_ERROR") {
     return { ...state, list: [], error: true };
@@ -22,6 +24,8 @@ const Hooks = () => {
   const [counter, setCounter] = React.useState(0);
   const [data, dispatch] = React.useReducer(dataReducer, initialData);
 
+  const { count, increment, decrement } = useCounter();
+
   React.useEffect(() => {
     async function fetchData() {
       try {
@@ -42,7 +46,6 @@ const Hooks = () => {
     <div className="app">
       <h1>My Counter</h1>
       <Counter counter={counter} />
-
       <button
         style={{ padding: "0.7rem" }}
         type="button"
@@ -51,7 +54,6 @@ const Hooks = () => {
       >
         +
       </button>
-
       <button
         style={{ padding: "0.7rem" }}
         type="button"
@@ -60,11 +62,17 @@ const Hooks = () => {
       >
         -
       </button>
+      <h1>My Custom Counter</h1>
+      <p>{count}</p>
 
+      <button style={{ padding: "0.7rem" }} onClick={increment}>
+        +
+      </button>
+      <button style={{ padding: "0.7rem" }} onClick={decrement}>
+        -
+      </button>
       <h2>My Async Data</h2>
-
       {data.error && <div className="error">Error</div>}
-
       <ul data-testid="list">
         {data.list.map(item => (
           <li data-testid="list-item" key={item.objectID}>
